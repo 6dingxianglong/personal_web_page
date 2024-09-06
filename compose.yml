@@ -1,0 +1,13 @@
+services:
+  web-page:
+    container_name: web-page
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run dev
+    volumes:
+      - /home/node/app/node_modules
+      - .:/home/node/app
+    ports:
+      - '5175:5175'
+    tty: true
